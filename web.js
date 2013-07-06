@@ -3,10 +3,12 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 var fs = require('fs');
+fs.readFile('index.html', function (err, data) {
+	if (err) throw err;
+	console.log(data);
+});
 
 app.get('/', function(request, response) {
-    fs.readFile(index.html);
-    if (err) throw err;
   //response.send('Hello World 2!');
 });
 
